@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<concrete5-cif version="1.0">
+    <tasks>
+        <task handle="generate_multisite_sitemap" package="md_multisite_sitemap"/>
+    </tasks>
+    <tasksets>
+        <taskset handle="seo" name="SEO and Search" package="">
+            <task handle="generate_multisite_sitemap"/>
+        </taskset>
+    </tasksets>
+</concrete5-cif>
