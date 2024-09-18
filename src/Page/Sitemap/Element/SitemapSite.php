@@ -11,15 +11,13 @@ use SimpleXMLElement;
 class SitemapSite extends SitemapElement
 {
     protected Site $site;
-    protected ResolverManagerInterface $resolver;
 
     /**
      * @param Site $site
      */
-    public function __construct(Site $site, ResolverManagerInterface $resolver)
+    public function __construct(Site $site)
     {
         $this->site = $site;
-        $this->resolver = $resolver;
     }
 
     public function toXmlLines($indenter = '  '): array
@@ -54,6 +52,6 @@ class SitemapSite extends SitemapElement
 
     protected function getLocation(): string
     {
-        return (string) $this->resolver->resolve(['sitemap_' . $this->site->getSiteID() . '.xml']);
+        return $this->site->getSiteCanonicalURL() . 'sitemap_' . $this->site->getSiteID() . '.xml';
     }
 }

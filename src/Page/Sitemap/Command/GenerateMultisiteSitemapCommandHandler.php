@@ -32,7 +32,7 @@ class GenerateMultisiteSitemapCommandHandler implements OutputAwareInterface
                 $sitemapGenerator->setPageListGenerator($pageListGenerator);
                 /** @var SitemapWriter $writer */
                 $writer = $app->make(SitemapWriter::class);
-                $writer->setOutputFilename('sitemap_' . $siteID . '.xml');
+                $writer->setOutputFilename(rtrim(DIR_BASE, '/') . '/sitemap_' . $siteID . '.xml');
                 $writer->setSitemapGenerator($sitemapGenerator);
                 $writer->generate();
                 $sitemapUrl = $writer->getSitemapUrl();
