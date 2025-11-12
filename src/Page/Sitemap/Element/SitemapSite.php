@@ -5,7 +5,7 @@ namespace Macareux\MultisiteSitemap\Page\Sitemap\Element;
 use Concrete\Core\Entity\Site\Site;
 use Concrete\Core\Error\UserMessageException;
 use Concrete\Core\Page\Sitemap\Element\SitemapElement;
-use Concrete\Core\Url\Resolver\Manager\ResolverManagerInterface;
+use Concrete\Core\Support\Facade\Application;
 use SimpleXMLElement;
 
 class SitemapSite extends SitemapElement
@@ -52,6 +52,6 @@ class SitemapSite extends SitemapElement
 
     protected function getLocation(): string
     {
-        return $this->site->getSiteCanonicalURL() . 'sitemap_' . $this->site->getSiteID() . '.xml';
+        return Application::getApplicationURL() . '/sitemap_' . $this->site->getSiteID() . '.xml';
     }
 }

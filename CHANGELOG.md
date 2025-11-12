@@ -1,5 +1,9 @@
 # Release Notes
 
+## [v0.9.1 (Nov 12, 2025)]
+
+- Fix a sitemap index file to generate references to the same domain. See: [Manage your sitemaps with a sitemap index file: Sitemap index best practices](https://developers.google.com/search/docs/crawling-indexing/sitemaps/large-sitemaps#sitemap-index-best-practices)
+
 ## [v0.9.0 (Sep 19, 2024)]
 
 ### Bug fixes
